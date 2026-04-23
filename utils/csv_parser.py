@@ -69,6 +69,7 @@ def parse_recruiters(csv_path: str) -> List[Dict[str, str]]:
                 "recruiter_name":    row["recruiter_name"],
                 "recruiter_email":   email,
                 "organization_name": row["organization_name"],
+                "role":              row.get("role", "Software Engineer"),
             })
 
     log_info("CSV parsed — %d valid recruiters loaded from %s",

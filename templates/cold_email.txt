@@ -1,6 +1,6 @@
 Dear Hiring Team,
 
-I am writing to apply for the {{role}} position at your organization. I am currently pursuing my B.Tech in Electronics and Communication Engineering from Jamia Millia Islamia, New Delhi, and I have been actively building my skills in full-stack web development.
+I am writing to apply for the {{role}} position at your organization. I am currently pursuing my B.Tech in Electronics and Communication Engineering(final semester) from Jamia Millia Islamia, New Delhi, and I have been actively building my skills in full-stack web development.
 
 I have hands-on experience working with JavaScript, React, Node.js, and MongoDB/SQL through personal projects where I have developed REST APIs, built responsive frontend interfaces, and handled backend logic. I am also familiar with Git and basic deployment workflows.
 
