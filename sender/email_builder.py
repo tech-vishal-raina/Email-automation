@@ -56,6 +56,7 @@ def _resolve_placeholders(text: str, recruiter: dict) -> str:
     replacements = {
         "{{name}}":         recruiter.get("recruiter_name", "Hiring Manager"),
         "{{company}}":      recruiter.get("organization_name", "your company"),
+        "{{role}}":  recruiter.get("role", "Software Engineer"),
         "{{opener}}":       random.choice(_OPENERS),
         "{{cta}}":          random.choice(_CTA_PHRASES),
         "{{closing}}":      random.choice(_CLOSINGS),
@@ -186,7 +187,7 @@ def build_email(recruiter: dict) -> dict:
     html_body = "\n".join(f"<p>{p.replace(chr(10), '<br>')}</p>" for p in paragraphs)
     html_body = f"""<!DOCTYPE html>
 <html><head><meta charset="UTF-8"></head>
-<body style="font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#222;max-width:600px;margin:auto;padding:20px;">
+<body style="font-family:Arial,sans-serif;font-size:14px;line-height:1.5;color:#222;">
 {html_body}
 </body></html>"""
 

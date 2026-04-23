@@ -1,22 +1,21 @@
-Hi {{name}},
+Dear Hiring Team,
 
-I hope you're doing well.
+I am writing to apply for the {{role}} position at your organization. I am currently pursuing my B.Tech in Electronics and Communication Engineering from Jamia Millia Islamia, New Delhi, and I have been actively building my skills in full-stack web development.
 
-I'm Vishal Raina, a final-year Electronics & Communication Engineering student at Jamia Millia Islamia (graduating May 2026), specializing in backend development with Node.js, TypeScript, PostgreSQL, and Redis.
-
-I came across {{company}} and was genuinely impressed by the work your team is doing. I believe my background aligns well with the kind of engineering challenges your team tackles.
+I have hands-on experience working with JavaScript, React, Node.js, and MongoDB/SQL through personal projects where I have developed REST APIs, built responsive frontend interfaces, and handled backend logic. I am also familiar with Git and basic deployment workflows.
 
 Here are a few highlights from my experience:
-
 • Internship at Disecto (data security startup) — built 15+ RESTful API endpoints with JWT/RBAC auth and Redis caching that reduced query response time by ~40%.
 • Distributed Job Queue System — engineered a BullMQ + Redis queue with 3 priority tiers, exponential backoff retry, and <0.1% job loss rate.
 • LLM Support Ticket System — built an OpenAI-powered auto-categorization pipeline with Django/DRF that reduced ticket triage time by ~70%.
 • Real-Time GPS Tracker — bi-directional WebSocket system using Socket.io with auto-disconnect cleanup.
 
-My core stack: Node.js · TypeScript · Express.js · PostgreSQL · MongoDB · Redis · Docker · AWS · Prisma.
+I am particularly interested in this role because it offers the opportunity to work on real-world projects in a fast-paced startup environment. I am eager to learn, contribute to production-level systems, and grow as a full-stack developer under experienced mentorship.
 
-I've attached my resume for your reference. I'm open to backend developer or full-stack roles and would be happy to do a quick technical call at your convenience.
+I would be grateful for the opportunity to be considered for this role. Please find my resume attached.
 
-Best regards,
+Thank you for your time and consideration.
+
+Sincerely,
 Vishal Raina
-LinkedIn: linkedin.com/in/vishal-raina-backend
+LinkedIN:  linkedin.com/in/vishal-raina-backend
