@@ -1,0 +1,98 @@
+{
+  "name": "recruiter-email-outreach",
+  "version": "1.0.0",
+  "description": "Automated cold email outreach to tech recruiters with deduplication and rate limiting",
+  "entry": "main.py",
+  "language": "python",
+  "python_version": ">=3.11",
+
+  "agent_tasks": [
+    {
+      "id": "load_recruiters",
+      "function": "main.task_load_recruiters",
+      "description": "Parse and validate recruiter CSV file",
+      "inputs": [
+        {"name": "csv_path", "type": "string", "required": true}
+      ],
+      "outputs": [
+        {"name": "recruiters", "type": "list[dict]"}
+      ]
+    },
+    {
+      "id": "filter_unsent",
+      "function": "main.task_filter_unsent",
+      "description": "Split recruiter list into unsent vs already-contacted",
+      "inputs": [
+        {"name": "recruiters", "type": "list[dict]", "required": true}
+      ],
+      "outputs": [
+        {"name": "to_send",      "type": "list[dict]"},
+        {"name": "already_sent", "type": "list[dict]"}
+      ]
+    },
+    {
+      "id": "send_campaign",
+      "function": "main.task_send_campaign",
+      "description": "Send personalized emails with resume attachment",
+      "inputs": [
+        {"name": "recruiters",   "type": "list[dict]", "required": true},
+        {"name": "resume_path",  "type": "string",     "required": true},
+        {"name": "limit",        "type": "integer",    "required": false, "default": 50},
+        {"name": "dry_run",      "type": "boolean",    "required": false, "default": false}
+      ],
+      "outputs": [
+        {"name": "summary", "type": "dict", "schema": {
+          "sent": "integer", "skipped": "integer", "failed": "integer", "total": "integer"
+        }}
+      ]
+    },
+    {
+      "id": "full_run",
+      "function": "main.run_agent_task",
+      "description": "Complete pipeline: load → filter → send",
+      "inputs": [
+        {"name": "csv_path",    "type": "string",  "required": true},
+        {"name": "resume_path", "type": "string",  "required": true},
+        {"name": "dry_run",     "type": "boolean", "required": false, "default": false},
+        {"name": "limit",       "type": "integer", "required": false, "default": 50}
+      ],
+      "outputs": [
+        {"name": "summary", "type": "dict"}
+      ]
+    },
+    {
+      "id": "status",
+      "function": "main.task_print_status",
+      "description": "Print sent-email database report",
+      "inputs": [],
+      "outputs": []
+    }
+  ],
+
+  "schedule": {
+    "type": "cron",
+    "expression": "0 9 * * 1-5",
+    "description": "Runs at 9 AM Monday–Friday"
+  },
+
+  "environment": {
+    "required": [
+      "SMTP_USERNAME",
+      "SMTP_PASSWORD",
+      "SENDER_NAME",
+      "SENDER_EMAIL"
+    ],
+    "optional": [
+      "OPENAI_API_KEY",
+      "TRACKING_PIXEL_URL",
+      "MAX_EMAILS_PER_RUN",
+      "DELAY_MIN_SECONDS",
+      "DELAY_MAX_SECONDS"
+    ]
+  },
+
+  "artifacts": {
+    "logs": ["logs/sent_emails.log", "logs/failed_emails.log"],
+    "database": "data/sent_emails.db"
+  }
+}

@@ -1,0 +1,12 @@
+# email-automation/requirements.txt
+# Install with: pip install -r requirements.txt
+
+# Core
+python-dotenv>=1.0.0    # .env file loading
+
+# Optional — AI personalization (only needed if USE_AI_PERSONALIZATION=true)
+openai>=1.30.0
+
+# Optional — test suite
+pytest>=8.0.0
+pytest-mock>=3.14.0

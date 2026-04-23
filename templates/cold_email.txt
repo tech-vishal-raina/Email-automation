@@ -1,0 +1,22 @@
+Hi {{name}},
+
+I hope you're doing well.
+
+I'm Vishal Raina, a final-year Electronics & Communication Engineering student at Jamia Millia Islamia (graduating May 2026), specializing in backend development with Node.js, TypeScript, PostgreSQL, and Redis.
+
+I came across {{company}} and was genuinely impressed by the work your team is doing. I believe my background aligns well with the kind of engineering challenges your team tackles.
+
+Here are a few highlights from my experience:
+
+• Internship at Disecto (data security startup) — built 15+ RESTful API endpoints with JWT/RBAC auth and Redis caching that reduced query response time by ~40%.
+• Distributed Job Queue System — engineered a BullMQ + Redis queue with 3 priority tiers, exponential backoff retry, and <0.1% job loss rate.
+• LLM Support Ticket System — built an OpenAI-powered auto-categorization pipeline with Django/DRF that reduced ticket triage time by ~70%.
+• Real-Time GPS Tracker — bi-directional WebSocket system using Socket.io with auto-disconnect cleanup.
+
+My core stack: Node.js · TypeScript · Express.js · PostgreSQL · MongoDB · Redis · Docker · AWS · Prisma.
+
+I've attached my resume for your reference. I'm open to backend developer or full-stack roles and would be happy to do a quick technical call at your convenience.
+
+Best regards,
+Vishal Raina
+LinkedIn: linkedin.com/in/vishal-raina-backend

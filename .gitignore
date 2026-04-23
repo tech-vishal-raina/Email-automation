@@ -1,0 +1,31 @@
+# Environment — NEVER commit this
+.env
+
+# Sent email database — contains PII
+data/sent_emails.db
+
+# Logs — contain email addresses
+logs/
+
+# Resume — personal document
+*.pdf
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
